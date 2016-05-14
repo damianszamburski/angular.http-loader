@@ -113,49 +113,5 @@
             </div>
         </section>
     </div>
-    <!--
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="row flex">
-                <div class="col-xs-3">
-                    <div ng-loader="test1"></div>
-<xmp><div ng-loader="test1"></div>
-
-$http({
-    method: 'GET',
-    url: 'https://httpbin.org/get',
-    loader: 'test1'
-});
-</xmp>
-                </div>
-                <div class="col-xs-3">
-                    <div ng-loader="test2"></div>
-<xmp><div ng-loader="test2"></div>
-
-$http({
-    method: 'POST',
-    url: 'https://httpbin.org/get',
-    loader: 'test2'
-});
-</xmp>
-                </div>
-                <div class="col-xs-3">
-                    <div ng-loader="test1 test2"></div>
-<xmp><div ng-loader="test1 test2"></div></xmp>
-                </div>
-                <div class="col-xs-3 flex">
-                    <pre><!--
-                    Test1: {{ httpLoader.test1 }}
-<!--                Test2: {{ httpLoader.test2 }}
-<!--                -->
-<!--                <div ng-repeat="request in requests track by $index">{{ request }}</div></pre>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12">
-            <input type="button" class="btn btn-primary" ng-click="ajaxTest()" value="Ajax request" ng-disabled="(requests|toArray).length > 0 && (requests|toArray).length < 4">
-        </div>
-    </div>
--->
 </body>
 </html>
