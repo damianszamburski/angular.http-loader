@@ -21,6 +21,7 @@ $http({..., loader: "your_loader_name"});
 Property:
 * **loader** - `{string}` - Name of loader that will be observed.
 
+
 **The `loader=""` directive:**
 
 You can observe `$http` requests in view:
@@ -28,6 +29,7 @@ You can observe `$http` requests in view:
 <div ng-loader="your_loader_name">...</div>
 ```
 Observe more than one variable (eq.`loader="your_loader_name1 your_loader_name2"`).
+
 
 When `$http` request is calling, the html element automaticly receives a html class `ajax-loading`, like that:
 ```
@@ -37,6 +39,7 @@ If you want to show `ajax-loading` class when view was init, add `ng-loader-init
 ```
 <div ng-loader="your_loader_name" ng-loader-init="true">...</div>
 ```
+
 
 Directives:
 * **ng-loader** - `string`
