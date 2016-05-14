@@ -13,6 +13,7 @@ Include module to your angular app:
 
 ## Usage
 **The `$http` service:**
+
 Available new property `loader` in config object:
 ```
 $http({..., loader: "your_loader_name"});
@@ -21,6 +22,7 @@ Property:
 * **loader** - `{string}` - Name of loader that will be observed.
 
 **The `loader=""` directive:**
+
 You can observe `$http` requests in view:
 ```
 <div ng-loader="your_loader_name">...</div>
