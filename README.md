@@ -1,5 +1,5 @@
 # angular.http-loader
-
+Angular `$http` service extend and directive `ng-loader`, to automaticly show loader when ajax request is pending.
 
 ## Installation
 Include the Javascript at the bottom of your page before the closing body tag:
