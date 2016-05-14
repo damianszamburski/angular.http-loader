@@ -9,6 +9,7 @@ Include the Javascript at the bottom of your page before the closing body tag:
 Include module to your angular app:
 ```
 .module('yourmodule', [..., 'angular.http-loader'])
+```
 
 ## Usage
 **The `$http` service:**
