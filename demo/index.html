@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="HttpLoaderTest">
+<head>
+    <title>Http loader</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="../js/angular-http-loader.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="AppController">
+    <div class="row wrapper">
+        <section class="col-xs-3">
+            <div class="row">
+                <div class="row-xs-4">
+<xmp>$http({
+    method: 'GET',
+    url: 'https://httpbin.org/get',
+    loader: 'test1'
+});
+</xmp>
+                </div>
+                <div class="row-xs-4">
+<xmp>$http({
+    method: 'POST',
+    url: 'https://httpbin.org/get',
+    loader: 'test2'
+});
+</xmp>
+                </div>
+                <div class="row-xs-4">
+<pre><div ng-if="(requests|toArray).length == 0">No requests - click "Ajax request" button to start</div><div ng-repeat="request in requests">{{ request }}</div>
+</pre>
+                </div>
+            </div>
+        </section>
+        <section class="col-xs-3">
+            <div class="row">
+                <div class="row-xs-4">
+<xmp><div ng-loader="test1"></div>
+</xmp>
+                </div>
+                <div class="row-xs-4">
+<xmp><div ng-loader="test2"></div>
+</xmp>
+                </div>
+                <div class="row-xs-4">
+<xmp><div ng-loader="test1 test2"></div>
+</xmp>
+                </div>
+            </div>
+        </section>
+        <section class="col-xs-1">
+            <div class="row">
+                <div class="row-xs-4">
+                    <div ng-loader="test1"></div>
+                </div>
+                <div class="row-xs-4">
+                    <div ng-loader="test2"></div>
+                </div>
+                <div class="row-xs-4">
+                    <div ng-loader="test1 test2"></div>
+                </div>
+            </div>
+        </section>
+        <section class="col-xs-5">
+            <div class="row">
+                <header>
+                    <input type="button" class="btn btn-primary" ng-click="ajaxTest()" value="Ajax request" ng-disabled="(requests|toArray).length > 0 && (requests|toArray).length < 4">
+                </header>
+                <article>
+                    <h1>Angular http-loader</h1>
+
+                    <h1>Installation</h1>
+                    <p>Include the Javascript at the bottom of your page before the closing body tag:</p>
+                    <xmp><script src="path/js/angular-http-loader.min.js"></script></xmp>
+                    <p>Include module to your angular app:</p>
+                    <xmp>.module('yourmodule', [..., 'angular.http-loader'])</xmp>
+
+                    <h1>Usage</h1>
+                    <label>The <code>$http</code> service:</label>
+                    <p>Available new property <code>loader</code> in config object:</p>
+                    <xmp>$http({..., loader: "your_loader_name"});</xmp>
+                    <p>Property:</p>
+                    <ul>
+                        <li><strong>loader</strong> - <code>{string}</code> - Name of loader that will be observed.</li>
+                    </ul>
+                    <label>The <code>loader=""</code> directive:</label>
+                    <p>You can observe <code>$http</code> requests in view:</p>
+                    <xmp><div ng-loader="your_loader_name">...</div></xmp>
+                    <p>Observe more than one variable (eq.<code>loader="your_loader_name1 your_loader_name2"</code>).</p>
+                    <p>&nbsp;</p>
+                    <p>When <code>$http</code> request is calling, the html element automaticly receives a html class <code>ajax-loading</code>, like that:</p>
+                    <xmp><div ng-loader="your_loader_name" class="ajax-loading">...</div></xmp>
+                    <p>If you want to show <code>ajax-loading</code> class when view was init, add <code>ng-loader-init=""</code> and set it to <code>true</code>, like that:
+                    <xmp><div ng-loader="your_loader_name" ng-loader-init="true">...</div></xmp>
+                    <p>&nbsp;</p>
+                    <p>Directives:</p>
+                    <ul>
+                        <li><strong>ng-loader</strong> - <code>{string}</code> - </li>
+                        <li><strong>ng-loader-init</strong> - <code>{bool=true}</code> (optional) - </li>
+                    </ul>
+
+                    <h1>License</h1>
+                    <strong>The MIT License (MIT)</strong>
+                    <p>Copyright (c) 2016 Damian Szamburski</p>
+                    <p>Permission is hereby granted, free of charge, to any person obtaining a copyof this software and associated documentation files (the "Software"), to dealin the Software without restriction, including without limitation the rightsto use, copy, modify, merge, publish, distribute, sublicense, and/or sellcopies of the Software, and to permit persons to whom the Software isfurnished to do so, subject to the following conditions:</p>
+                    <p>The above copyright notice and this permission notice shall be included inall copies or substantial portions of the Software.</p>
+                    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS ORIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THEAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHERLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS INTHE SOFTWARE.</p>
+                </article>
+            </div>
+        </section>
+    </div>
+    <!--
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row flex">
+                <div class="col-xs-3">
+                    <div ng-loader="test1"></div>
+<xmp><div ng-loader="test1"></div>
+
+$http({
+    method: 'GET',
+    url: 'https://httpbin.org/get',
+    loader: 'test1'
+});
+</xmp>
+                </div>
+                <div class="col-xs-3">
+                    <div ng-loader="test2"></div>
+<xmp><div ng-loader="test2"></div>
+
+$http({
+    method: 'POST',
+    url: 'https://httpbin.org/get',
+    loader: 'test2'
+});
+</xmp>
+                </div>
+                <div class="col-xs-3">
+                    <div ng-loader="test1 test2"></div>
+<xmp><div ng-loader="test1 test2"></div></xmp>
+                </div>
+                <div class="col-xs-3 flex">
+                    <pre><!--
+                    Test1: {{ httpLoader.test1 }}
+<!--                Test2: {{ httpLoader.test2 }}
+<!--                -->
+<!--                <div ng-repeat="request in requests track by $index">{{ request }}</div></pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <input type="button" class="btn btn-primary" ng-click="ajaxTest()" value="Ajax request" ng-disabled="(requests|toArray).length > 0 && (requests|toArray).length < 4">
+        </div>
+    </div>
+-->
+</body>
+</html>
