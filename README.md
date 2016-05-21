@@ -8,7 +8,7 @@ Include the Javascript at the bottom of your page before the closing body tag:
 ```
 Include module to your angular app:
 ```
-.module('yourmodule', [..., 'angular.http-loader'])
+.module('yourmodule', [..., 'angular.http-loader']);
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Available new property `loader` in config object:
 $http({..., loader: "your_loader_name"});
 ```
 Property:
-* **loader** - `{string}` - Name of loader that will be observed.
+* **loader** - `{string}` - Single unique name of loader that will be observed.
 
 
 **The `loader=""` directive:**
@@ -31,22 +31,23 @@ You can observe `$http` requests in view:
 Observe more than one variable (eq.`loader="your_loader_name1 your_loader_name2"`).
 
 
-When `$http` request is calling, the html element automaticly receives a html class `ajax-loading`, like that:
+When `$http` request is calling, the html element automaticly receives a html class `ajax-loading`:
 ```
 <div ng-loader="your_loader_name" class="ajax-loading">...</div>
 ```
-If you want to show `ajax-loading` class when view was init, add `ng-loader-init=""` and set it to `true`, like that:
+If you want to show `ajax-loading` class when view was init, add `ng-loader-init=""` and set it to `true`:
 ```
 <div ng-loader="your_loader_name" ng-loader-init="true">...</div>
 ```
 
 
 Directives:
-* **ng-loader** - `string`
-* **ng-loader-init** - `bool=true` (optional)
+* **ng-loader** - `{string}`
+* **ng-loader-init** - `{bool=false}` (optional)
 
 ## License
 **The MIT License (MIT)**
+
 Copyright (c) 2016 Damian Szamburski
 
 Permission is hereby granted, free of charge, to any person obtaining a copyof this software and associated documentation files (the "Software"), to dealin the Software without restriction, including without limitation the rightsto use, copy, modify, merge, publish, distribute, sublicense, and/or sellcopies of the Software, and to permit persons to whom the Software isfurnished to do so, subject to the following conditions:
