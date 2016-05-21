@@ -1,5 +1,5 @@
 /**
- * http-loader v.0.1
+ * http-loader v1.0
  * (c) 2016 Damian Szamburski, @:damian.szamburski@gmail.com, fb:/szamburski.damian
  * License: MIT
  */
